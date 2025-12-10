@@ -1,18 +1,22 @@
 package com.testautomatizados;
 
-import com.services.ComissionService;
+import com.testautomatizados.services.ComissionService;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ComissionServiceTest {
     private final ComissionService service = new ComissionService();
 
+
     @Test
     void testZeroAmount() {
-        assertEquals(BigDecimal.ZERO, service.calculateCommission(BigDecimal.ZERO));
+        BigDecimal expected = BigDecimal.ZERO;
+        BigDecimal actual = service.calculateCommission(BigDecimal.ZERO);
+        assertTrue(expected.compareTo(actual) == 0);
     }
 
     @Test

@@ -1,10 +1,12 @@
 package com.testautomatizados;
 
-import com.interfaces.TransactionRepository;
-import com.transactions.Transaction;
+import com.testautomatizados.repository.TransactionRepository;
+import com.testautomatizados.model.Transaction;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
+import org.springframework.boot.persistence.autoconfigure.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -14,6 +16,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DataJpaTest
 public class TransactionRepositoryTests {
+    @DataJpaTest
+    @EntityScan(basePackages = "com.transactions")
+    @EnableJpaRepositories(basePackages = "com.testautomatizados.repository")
+    class TransactionRepositoryTest { }
+
     @Autowired
     private TransactionRepository repository;
 

@@ -1,4 +1,4 @@
-package com.services;
+package com.testautomatizados.services;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

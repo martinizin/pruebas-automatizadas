@@ -1,4 +1,4 @@
-package com.transactions;
+package com.testautomatizados.model;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
